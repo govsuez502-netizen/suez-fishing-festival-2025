@@ -29,7 +29,7 @@ body::before {
   background: rgba(255, 255, 255, 0.1);
   border-radius: 18px;
   padding: 1.5rem;
-  max-width: 700px;
+  max-width: 750px;
   width: 95%;
   box-sizing: border-box;
   backdrop-filter: blur(10px);
@@ -69,33 +69,34 @@ h1 {
   font-weight: bold;
 }
 
-/* ===== عدّاد ديجيتال ===== */
-.countdown-digital {
+/* ===== مربعات العد ===== */
+.time-boxes {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
   margin-top: 1.2rem;
-  background: rgba(255, 255, 255, 0.85); /* فاتح */
-  color: #1e3a8a; /* أزرق داكن */
-  font-family: 'Courier New', monospace;
+  flex-wrap: wrap;
+}
+
+.time-box {
+  background: rgba(255,255,255,0.9);
+  color: #1e3a8a;
+  border-radius: 12px;
+  padding: 1rem;
+  min-width: 90px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.2);
+}
+
+.time-value {
   font-size: 2rem;
   font-weight: bold;
-  padding: 1rem 1.5rem;
-  border-radius: 10px;
-  display: inline-block;
-  letter-spacing: 3px;
-  box-shadow: 0 0 15px rgba(30,58,138,0.35);
 }
 
-.countdown-digital span {
-  display: inline-block;
-  min-width: 48px;
-  text-align: center;
+.time-label {
+  font-size: 0.9rem;
+  margin-top: 0.3rem;
+  color: #333;
 }
-
-/* وميض الفواصل */
-.blink {
-  animation: blink 1s step-start infinite;
-  color: #2563eb;
-}
-@keyframes blink { 50% { opacity: 0; } }
 
 /* --- الأزرار --- */
 .cta {
@@ -132,26 +133,17 @@ h1 {
 }
 .cta .register:hover { background: #1ebe57; transform: translateY(-2px); }
 
-/* --- تجاوب على الشاشات الصغيرة --- */
+/* --- تجاوب على الموبايل --- */
 @media (max-width: 700px) {
-  .countdown-digital { 
-    font-size: 1.4rem; 
-    letter-spacing: 1.5px; 
-    padding: 0.6rem 1rem; 
-  }
-  .countdown-digital span { min-width: 36px; }
+  .time-value { font-size: 1.6rem; }
+  .time-box { min-width: 70px; padding: 0.8rem; }
   h1 { font-size: 1.5rem; }
   .subtitle { font-size: 0.85rem; }
   .event-date { font-size: 0.9rem; }
-  .container { padding: 1rem; margin: 0.6rem; }
 }
 
 @media (max-width: 420px) {
-  .countdown-digital { 
-    font-size: 1.1rem; 
-    letter-spacing: 1px; 
-    padding: 0.4rem 0.6rem; 
-  }
-  .countdown-digital span { min-width: 28px; }
+  .time-value { font-size: 1.3rem; }
+  .time-box { min-width: 60px; padding: 0.6rem; }
   h1 { font-size: 1.2rem; }
 }
