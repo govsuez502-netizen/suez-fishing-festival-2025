@@ -1,5 +1,5 @@
-// التاريخ الجديد: 13 أكتوبر 2025 (من غير ساعة)
-const TARGET_DATE = new Date('2025-10-13T18:00:00');
+// التاريخ الجديد: 13 أكتوبر 2025 (بدون ساعة)
+const TARGET_DATE = new Date('2025-10-13T00:00:00');
 
 document.getElementById('event-date').textContent = TARGET_DATE.toLocaleDateString('ar-EG', {
   dateStyle: 'full'
