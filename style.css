@@ -6,7 +6,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(to bottom, #2563eb, #1e3a8a);
+  background: linear-gradient(to bottom, #1e3a8a, #2563eb);
   color: white;
   text-align: center;
   position: relative;
@@ -19,7 +19,7 @@ body::before {
   inset: 0;
   background: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1600&auto=format&fit=crop') 
               no-repeat center center/cover;
-  opacity: 0.35;
+  opacity: 0.3;
   filter: brightness(0.7);
 }
 
@@ -27,124 +27,123 @@ body::before {
   position: relative;
   z-index: 2;
   background: rgba(255, 255, 255, 0.08);
-  border-radius: 20px;
-  padding: 2rem;
-  max-width: 800px;
+  border-radius: 18px;
+  padding: 1.5rem;
+  max-width: 700px;
   width: 95%;
   box-sizing: border-box;
-  backdrop-filter: blur(8px);
-  box-shadow: 0 8px 30px rgba(0,0,0,0.4);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 6px 25px rgba(0,0,0,0.35);
   margin: 1rem;
 }
 
 h1 {
-  font-size: 2rem;
-  margin-bottom: 0.5rem;
+  font-size: 1.9rem;
+  margin-bottom: 0.4rem;
 }
 
 .subtitle {
   font-size: 0.95rem;
-  opacity: 0.85;
+  opacity: 0.9;
 }
 
 .event-date {
   margin-top: 0.6rem;
   font-weight: bold;
-  font-size: 1.05rem;
+  font-size: 1rem;
 }
 
+/* --- كارت العداد --- */
 .countdown-card {
-  margin-top: 1.6rem;
-  padding: 1.4rem;
-  border-radius: 15px;
-  background: rgba(255, 255, 255, 0.06);
+  margin-top: 1.4rem;
+  padding: 1.2rem;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.07);
   border: 1px solid rgba(255, 255, 255, 0.12);
-  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+  box-shadow: 0 4px 18px rgba(0,0,0,0.25);
 }
 
 .countdown-title {
-  font-size: 1.15rem;
+  font-size: 1.1rem;
   margin-bottom: 1rem;
   font-weight: bold;
 }
 
 /* ===== عدّاد ديجيتال ===== */
 .countdown-digital {
-  margin-top: 1.6rem;
-  background: rgba(0, 0, 0, 0.85);
-  color: #39ff14; /* أخضر نيوني */
+  margin-top: 1.2rem;
+  background: rgba(0, 0, 30, 0.85);
+  color: #e0f7ff; /* أبيض مزرق */
   font-family: 'Courier New', monospace;
   font-size: 2rem;
   font-weight: bold;
-  padding: 1rem 1.8rem;
+  padding: 0.9rem 1.5rem;
   border-radius: 10px;
   display: inline-block;
   letter-spacing: 3px;
-  box-shadow: 0 0 25px rgba(57,255,20,0.4);
-  backdrop-filter: blur(4px);
+  box-shadow: 0 0 25px rgba(37, 99, 235, 0.5);
 }
 
 .countdown-digital span {
   display: inline-block;
-  min-width: 54px;
+  min-width: 50px;
   text-align: center;
 }
 
 /* وميض الفواصل */
 .blink {
   animation: blink 1s step-start infinite;
+  color: #38bdf8; /* سماوي */
 }
 @keyframes blink { 50% { opacity: 0; } }
 
 /* --- الأزرار --- */
 .cta {
-  margin-top: 1.8rem;
+  margin-top: 1.6rem;
   display: flex;
   flex-direction: column;
-  gap: 0.9rem;
+  gap: 0.8rem;
 }
 
 .cta a {
   display: inline-block;
-  padding: 0.9rem 1.6rem;
-  border-radius: 12px;
+  padding: 0.9rem 1.4rem;
+  border-radius: 10px;
   font-weight: bold;
   cursor: pointer;
   text-decoration: none;
-  transition: all 0.28s ease;
+  transition: all 0.25s ease;
   font-size: 1rem;
   letter-spacing: 0.4px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.22);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
 
 /* زر الاستفسار (فيسبوك) */
 .cta .details {
   background: #1877f2;
   color: white;
-  border: none;
 }
-.cta .details:hover { background: #0d65d9; transform: translateY(-3px); }
+.cta .details:hover { background: #0d65d9; transform: translateY(-2px); }
 
 /* زر الاشتراك (واتساب) */
 .cta .register {
   background: #25d366;
   color: white;
-  border: none;
 }
-.cta .register:hover { background: #1ebe57; transform: translateY(-3px); }
+.cta .register:hover { background: #1ebe57; transform: translateY(-2px); }
 
 /* --- تجاوب على الشاشات الصغيرة --- */
 @media (max-width: 700px) {
-  .countdown-digital { font-size: 1.6rem; letter-spacing: 2px; padding: 0.7rem 1rem; }
-  .countdown-digital span { min-width: 42px; }
-  h1 { font-size: 1.6rem; }
-  .subtitle { font-size: 0.9rem; }
-  .event-date { font-size: 1rem; }
-  .container { padding: 1.2rem; margin: 0.8rem; border-radius: 14px; }
+  .countdown-digital { font-size: 1.5rem; letter-spacing: 2px; padding: 0.7rem 1rem; }
+  .countdown-digital span { min-width: 38px; }
+  h1 { font-size: 1.5rem; }
+  .subtitle { font-size: 0.85rem; }
+  .event-date { font-size: 0.95rem; }
+  .container { padding: 1rem; margin: 0.6rem; }
 }
 
 @media (max-width: 420px) {
-  .countdown-digital { font-size: 1.2rem; letter-spacing: 1.5px; padding: 0.5rem 0.8rem; }
-  .countdown-digital span { min-width: 34px; }
+  .countdown-digital { font-size: 1.2rem; letter-spacing: 1px; padding: 0.5rem 0.8rem; }
+  .countdown-digital span { min-width: 30px; }
   h1 { font-size: 1.2rem; }
 }
