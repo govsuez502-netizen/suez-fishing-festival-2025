@@ -1,0 +1,33 @@
+body {
+  font-family: "Cairo", sans-serif;
+  text-align: center;
+  background: linear-gradient(to right, #ffcc70, #ff8177);
+  color: #222;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  margin-top: 15%;
+}
+
+h1 {
+  font-size: 2.5em;
+  margin-bottom: 30px;
+  color: #b22222;
+}
+
+#countdown {
+  font-size: 2em;
+  font-weight: bold;
+  background: #fff;
+  display: inline-block;
+  padding: 20px 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.footer {
+  margin-top: 40px;
+  font-size: 1.2em;
+}
