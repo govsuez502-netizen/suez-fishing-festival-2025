@@ -17,7 +17,7 @@ body::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1600&auto=format&fit=crop') no-repeat center center/cover;
+  background: url('https://images.unsplash.com/photo-1527694224012-be005121c774?q=80&w=1600&auto=format&fit=crop') no-repeat center center/cover;
   opacity: 0.35;
   filter: brightness(0.6);
 }
@@ -26,7 +26,6 @@ body::before {
   position: relative;
   z-index: 2;
   background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: 20px;
   padding: 2rem;
   max-width: 800px;
@@ -39,7 +38,7 @@ body::before {
 
 h1 {
   font-size: 2rem;
-  margin-bottom: 0.4rem;
+  margin-bottom: 0.5rem;
 }
 
 .subtitle {
@@ -62,86 +61,42 @@ h1 {
   box-shadow: 0 6px 20px rgba(0,0,0,0.3);
 }
 
-/* عنوان العد */
 .countdown-title {
   font-size: 1.15rem;
   margin-bottom: 1rem;
   font-weight: bold;
 }
 
-/* --- الساعة الدائرية --- */
-.clock-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 0.5rem;
+/* ===== عدّاد ديجيتال ===== */
+.countdown-digital {
+  margin-top: 1.6rem;
+  background: #000;
+  color: #00ffea;
+  font-family: 'Courier New', monospace;
+  font-size: 2rem;
+  font-weight: bold;
+  padding: 0.9rem 1.6rem;
+  border-radius: 10px;
+  display: inline-block;
+  letter-spacing: 3px;
+  box-shadow: 0 0 20px rgba(0,255,234,0.45);
 }
 
-.clock-circle {
-  width: 320px;
-  height: 320px;
-  border-radius: 50%;
-  background: radial-gradient(circle at 30% 20%, rgba(255,255,255,0.03), rgba(255,255,255,0.02) 20%, transparent 40%),
-              linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.05));
-  border: 1px solid rgba(255,255,255,0.08);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 18px 40px rgba(0,0,0,0.4), inset 0 2px 8px rgba(255,255,255,0.03);
-  padding: 1.2rem;
+.countdown-digital span {
+  display: inline-block;
+  min-width: 54px;
+  text-align: center;
 }
 
-/* الوسط الرقمي */
-.time-display {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.6rem;
-  direction: ltr; /* نعرض الأرقام من يسار ليمين داخل الدائرة لقراءة طبيعية للأرقام */
+/* وميض الفواصل */
+.blink {
+  animation: blink 1s step-start infinite;
 }
-
-.segment {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  min-width: 72px;
-}
-
-.segment.small { min-width: 58px; }
-
-.value {
-  font-size: 2.6rem;
-  font-weight: 900;
-  line-height: 1;
-  color: #ffffff;
-  text-shadow: 0 3px 12px rgba(0,0,0,0.6);
-  background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.00));
-  padding: 0.3rem 0.6rem;
-  border-radius: 8px;
-  border: 1px solid rgba(255,255,255,0.06);
-}
-
-.label {
-  margin-top: 6px;
-  font-size: 0.82rem;
-  color: rgba(255,255,255,0.9);
-  opacity: 0.95;
-}
-
-/* الفواصل (:) */
-.colon {
-  font-size: 2.4rem;
-  color: rgba(255,255,255,0.9);
-  padding: 0 4px;
-  transform: translateY(-6px);
-  opacity: 0.95;
-  animation: blink 1s steps(1) infinite;
-}
-@keyframes blink { 50% { opacity: 0.25; } }
+@keyframes blink { 50% { opacity: 0; } }
 
 /* --- الأزرار --- */
 .cta {
-  margin-top: 1.6rem;
+  margin-top: 1.8rem;
   display: flex;
   flex-direction: column;
   gap: 0.9rem;
@@ -161,42 +116,31 @@ h1 {
 }
 
 .cta .details {
-  background: linear-gradient(135deg, rgba(255,255,255,0.14), rgba(255,255,255,0.04));
+  background: #333;
   color: white;
-  border: 1px solid rgba(255,255,255,0.28);
-  backdrop-filter: blur(6px);
+  border: 1px solid #666;
 }
-.cta .details:hover { transform: translateY(-3px); opacity: 0.98; }
+.cta .details:hover { background: #444; transform: translateY(-3px); }
 
 .cta .register {
-  background: linear-gradient(135deg, #ffffff, #e0e7ff);
-  color: #1e3a8a;
+  background: #00ffea;
+  color: #000;
   border: none;
 }
-.cta .register:hover { transform: translateY(-3px); }
+.cta .register:hover { background: #00e0cc; transform: translateY(-3px); }
 
-/* --- تجاوب --- */
+/* --- تجاوب على الشاشات الصغيرة --- */
 @media (max-width: 700px) {
-  .clock-circle {
-    width: 260px;
-    height: 260px;
-    padding: 1rem;
-  }
-  .value { font-size: 2.2rem; }
-  .colon { font-size: 2rem; transform: translateY(-4px); }
-  .segment.small { min-width: 48px; }
+  .countdown-digital { font-size: 1.6rem; letter-spacing: 2px; padding: 0.7rem 1rem; }
+  .countdown-digital span { min-width: 42px; }
+  h1 { font-size: 1.6rem; }
+  .subtitle { font-size: 0.9rem; }
+  .event-date { font-size: 1rem; }
+  .container { padding: 1.2rem; margin: 0.8rem; border-radius: 14px; }
 }
 
 @media (max-width: 420px) {
-  .clock-circle {
-    width: 220px;
-    height: 220px;
-    padding: 0.7rem;
-  }
-  .value { font-size: 1.6rem; }
-  .colon { font-size: 1.6rem; transform: translateY(-2px); }
-  .time-display { gap: 0.3rem; }
-  .segment { min-width: 44px; }
-  .event-date { font-size: 0.95rem; }
+  .countdown-digital { font-size: 1.2rem; letter-spacing: 1.5px; padding: 0.5rem 0.8rem; }
+  .countdown-digital span { min-width: 34px; }
   h1 { font-size: 1.2rem; }
 }
