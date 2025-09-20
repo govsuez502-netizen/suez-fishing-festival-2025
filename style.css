@@ -6,7 +6,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(to bottom, #1e3a8a, #2563eb);
+  background: linear-gradient(to bottom, #60a5fa, #1e3a8a); /* أزرق فاتح → أزرق داكن */
   color: white;
   text-align: center;
   position: relative;
@@ -19,14 +19,14 @@ body::before {
   inset: 0;
   background: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1600&auto=format&fit=crop') 
               no-repeat center center/cover;
-  opacity: 0.3;
-  filter: brightness(0.7);
+  opacity: 0.25;
+  filter: brightness(0.75);
 }
 
 .container {
   position: relative;
   z-index: 2;
-  background: rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.1);
   border-radius: 18px;
   padding: 1.5rem;
   max-width: 700px;
@@ -58,8 +58,8 @@ h1 {
   margin-top: 1.4rem;
   padding: 1.2rem;
   border-radius: 14px;
-  background: rgba(255, 255, 255, 0.07);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
   box-shadow: 0 4px 18px rgba(0,0,0,0.25);
 }
 
@@ -72,28 +72,28 @@ h1 {
 /* ===== عدّاد ديجيتال ===== */
 .countdown-digital {
   margin-top: 1.2rem;
-  background: rgba(0, 0, 30, 0.85);
-  color: #e0f7ff; /* أبيض مزرق */
+  background: rgba(255, 255, 255, 0.85); /* فاتح */
+  color: #1e3a8a; /* أزرق داكن */
   font-family: 'Courier New', monospace;
   font-size: 2rem;
   font-weight: bold;
-  padding: 0.9rem 1.5rem;
+  padding: 1rem 1.5rem;
   border-radius: 10px;
   display: inline-block;
   letter-spacing: 3px;
-  box-shadow: 0 0 25px rgba(37, 99, 235, 0.5);
+  box-shadow: 0 0 15px rgba(30,58,138,0.35);
 }
 
 .countdown-digital span {
   display: inline-block;
-  min-width: 50px;
+  min-width: 48px;
   text-align: center;
 }
 
 /* وميض الفواصل */
 .blink {
   animation: blink 1s step-start infinite;
-  color: #38bdf8; /* سماوي */
+  color: #2563eb;
 }
 @keyframes blink { 50% { opacity: 0; } }
 
@@ -134,16 +134,24 @@ h1 {
 
 /* --- تجاوب على الشاشات الصغيرة --- */
 @media (max-width: 700px) {
-  .countdown-digital { font-size: 1.5rem; letter-spacing: 2px; padding: 0.7rem 1rem; }
-  .countdown-digital span { min-width: 38px; }
+  .countdown-digital { 
+    font-size: 1.4rem; 
+    letter-spacing: 1.5px; 
+    padding: 0.6rem 1rem; 
+  }
+  .countdown-digital span { min-width: 36px; }
   h1 { font-size: 1.5rem; }
   .subtitle { font-size: 0.85rem; }
-  .event-date { font-size: 0.95rem; }
+  .event-date { font-size: 0.9rem; }
   .container { padding: 1rem; margin: 0.6rem; }
 }
 
 @media (max-width: 420px) {
-  .countdown-digital { font-size: 1.2rem; letter-spacing: 1px; padding: 0.5rem 0.8rem; }
-  .countdown-digital span { min-width: 30px; }
+  .countdown-digital { 
+    font-size: 1.1rem; 
+    letter-spacing: 1px; 
+    padding: 0.4rem 0.6rem; 
+  }
+  .countdown-digital span { min-width: 28px; }
   h1 { font-size: 1.2rem; }
 }
