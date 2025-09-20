@@ -17,9 +17,10 @@ body::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: url('https://images.unsplash.com/photo-1527694224012-be005121c774?q=80&w=1600&auto=format&fit=crop') no-repeat center center/cover;
+  background: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1600&auto=format&fit=crop') 
+              no-repeat center center/cover;
   opacity: 0.35;
-  filter: brightness(0.6);
+  filter: brightness(0.65);
 }
 
 .container {
@@ -71,15 +72,15 @@ h1 {
 .countdown-digital {
   margin-top: 1.6rem;
   background: #000;
-  color: #00ffea;
+  color: #39ff14; /* أخضر نيوني */
   font-family: 'Courier New', monospace;
   font-size: 2rem;
   font-weight: bold;
-  padding: 0.9rem 1.6rem;
+  padding: 1rem 1.8rem;
   border-radius: 10px;
   display: inline-block;
   letter-spacing: 3px;
-  box-shadow: 0 0 20px rgba(0,255,234,0.45);
+  box-shadow: 0 0 25px rgba(57,255,20,0.5);
 }
 
 .countdown-digital span {
@@ -115,19 +116,21 @@ h1 {
   box-shadow: 0 4px 12px rgba(0,0,0,0.22);
 }
 
+/* زر الاستفسار (فيسبوك) */
 .cta .details {
-  background: #333;
+  background: #1877f2;
   color: white;
-  border: 1px solid #666;
-}
-.cta .details:hover { background: #444; transform: translateY(-3px); }
-
-.cta .register {
-  background: #00ffea;
-  color: #000;
   border: none;
 }
-.cta .register:hover { background: #00e0cc; transform: translateY(-3px); }
+.cta .details:hover { background: #0d65d9; transform: translateY(-3px); }
+
+/* زر الاشتراك (واتساب) */
+.cta .register {
+  background: #25d366;
+  color: white;
+  border: none;
+}
+.cta .register:hover { background: #1ebe57; transform: translateY(-3px); }
 
 /* --- تجاوب على الشاشات الصغيرة --- */
 @media (max-width: 700px) {
