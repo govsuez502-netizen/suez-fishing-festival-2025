@@ -15,37 +15,12 @@
     <div class="countdown-card">
       <div class="countdown-title">بدأ العد التنازلي</div>
 
-      <!-- ساعة دائرية رقمية -->
-      <div class="clock-wrapper" aria-hidden="false" aria-label="العد التنازلي للفعالية">
-        <div class="clock-circle">
-          <div class="time-display" id="time-display" role="timer" aria-live="polite">
-            <div class="segment">
-              <div class="value" id="days">0</div>
-              <div class="label">أيام</div>
-            </div>
-
-            <div class="colon">:</div>
-
-            <div class="segment small">
-              <div class="value" id="hours">00</div>
-              <div class="label">ساعات</div>
-            </div>
-
-            <div class="colon">:</div>
-
-            <div class="segment small">
-              <div class="value" id="minutes">00</div>
-              <div class="label">دقائق</div>
-            </div>
-
-            <div class="colon">:</div>
-
-            <div class="segment small">
-              <div class="value" id="seconds">00</div>
-              <div class="label">ثواني</div>
-            </div>
-          </div>
-        </div>
+      <!-- عدّاد ديجيتال مستطيل -->
+      <div class="countdown-digital" id="countdown">
+        <span id="days">00</span> <span class="blink">:</span>
+        <span id="hours">00</span> <span class="blink">:</span>
+        <span id="minutes">00</span> <span class="blink">:</span>
+        <span id="seconds">00</span>
       </div>
 
       <!-- روابط الأزرار -->
@@ -56,6 +31,7 @@
     </div>
   </div>
 
+  <!-- رابط لملف الجافاسكربت (لا تنسي ترفعين script.js مع هذا الملف) -->
   <script src="script.js"></script>
 </body>
 </html>
