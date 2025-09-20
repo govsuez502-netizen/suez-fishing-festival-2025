@@ -15,12 +15,20 @@
     <div class="countdown-card">
       <div class="countdown-title">بدأ العد التنازلي</div>
 
-      <!-- عدّاد ديجيتال مستطيل -->
-      <div class="countdown-digital" id="countdown">
-        <span id="days">00</span> <span class="blink">:</span>
-        <span id="hours">00</span> <span class="blink">:</span>
-        <span id="minutes">00</span> <span class="blink">:</span>
-        <span id="seconds">00</span>
+      <!-- عداد بأعمدة منفصلة -->
+      <div class="time-boxes">
+        <div class="time-box">
+          <div class="time-value" id="days">00</div>
+          <div class="time-label">أيام</div>
+        </div>
+        <div class="time-box">
+          <div class="time-value" id="hours">00</div>
+          <div class="time-label">ساعات</div>
+        </div>
+        <div class="time-box">
+          <div class="time-value" id="minutes">00</div>
+          <div class="time-label">دقائق</div>
+        </div>
       </div>
 
       <!-- روابط الأزرار -->
@@ -31,7 +39,6 @@
     </div>
   </div>
 
-  <!-- رابط ملف الجافاسكربت -->
   <script src="script.js"></script>
 </body>
 </html>
